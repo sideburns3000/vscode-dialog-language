@@ -34,6 +34,21 @@
 					}
 				}
 			}
+		],
+		"problemMatchers": [
+			{
+				"name": "dialog",
+				"owner": "dialog",
+				"source": "dialog",
+				"fileLocation": "autoDetect",
+				"pattern": {
+					"regexp": "^(Error|Warning|Info): (.*), line (\\d*): (.*)$",
+					"severity": 1,
+					"file": 2,
+					"location": 3,
+					"message": 4
+				}
+			}
 		]
 	},
 	"scripts": {
