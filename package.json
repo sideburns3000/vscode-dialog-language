@@ -9,6 +9,7 @@
 	"categories": [
 		"Programming Languages"
 	],
+	"icon": "./images/dialog_icon.png",
 	"activationEvents": [
 		"onCommand:extension.helloWorld",
 		"onCommand:workbench.action.tasks.runTask"
