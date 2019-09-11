@@ -1,0 +1,59 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Dialog",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.dialog",
+				"match": "\\b(if|then|elseif|else|endif|select|or|stopping|cycling)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.dialog",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dialog",
+					"match": "\\\\."
+				}
+			]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.parameter.dialog",
+				"match": "[$]\\w*"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.dialog",
+				"match": "[%%].*$"
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "entity.name.dialog",
+				"match": "([*]|[#]\\w*)"
+			}]
+		}
+	},
+	"scopeName": "source.dg"
+}
