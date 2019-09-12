@@ -68,7 +68,7 @@
 				"dialog.includeWhenCompiling": {
 					"type": "string",
 					"default": "stdlib.dg",
-					"description": "List all .dg files that shall be included when compiling, separated only by commas (for example: stddebug.dg,stdlib.dg).\n(Except for the .dg file that is currently open in the editor, as that will be prepended automatically.)\nDefault is just the Standard Library: stdlib.dg.\nIf you change this setting, please restart VS Code for it to take effect."
+					"description": "List all .dg files that shall be included when compiling, separated only by commas (for example: stddebug.dg,stdlib.dg).\n(Except for the .dg file that is currently open in the editor, as that will be prepended automatically.)\nDefault is just the Standard Library: stdlib.dg."
 				}
 			}
 		}
