@@ -6,6 +6,12 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#braces"
+		},
+		{
+			"include": "#brackets"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -15,30 +21,51 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#constants"
+			"include": "#objects"
+		},
+		{
+			"include": "#formatting"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.dialog",
-				"match": "\\b(if|then|elseif|else|endif|select|or|stopping|cycling)\\b"
+				"match": "(~|\\((~|if|then|elseif|else|endif|select|or|cycling|stopping|at random|purely at random|then at random|then purely at random|stop|just|repeat forever|fail)\\))"
+			}]
+		},
+		"braces": {
+			"patterns": [{
+				"name": "punctuation.brace.open",
+				"match": "{"
+			},
+			{
+				"name": "punctuation.brace.close",
+				"match": "}"
+			}]
+		},
+		"brackets": {
+			"patterns": [{
+				"name": "punctuation.bracket.open",
+				"match": "\\["
+			},
+			{
+				"name": "punctuation.bracket.close",
+				"match": "\\]"
 			}]
 		},
 		"strings": {
 			"name": "string.quoted.double.dialog",
 			"begin": "\"",
 			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.dialog",
-					"match": "\\\\."
-				}
-			]
+			"patterns": [{
+				"name": "constant.character.escape.dialog",
+				"match": "\\\\."
+			}]
 		},
 		"variables": {
 			"patterns": [{
-				"name": "variable.parameter.dialog",
+				"name": "constant.language",
 				"match": "[$]\\w*"
 			}]
 		},
@@ -48,10 +75,16 @@
 				"match": "[%%].*$"
 			}]
 		},
-		"constants": {
+		"objects": {
 			"patterns": [{
 				"name": "entity.name.dialog",
 				"match": "([*]|[#]\\w*)"
+			}]
+		},
+		"formatting": {
+			"patterns": [{
+				"name": "entity.other.attribute-name.dialog",
+				"match": "\\((par|line|bold|italic|reverse|fixed pitch|roman|unstyle|uppercase|space|no space|clear|clear all)\\)"
 			}]
 		}
 	},
