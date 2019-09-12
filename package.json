@@ -2,13 +2,20 @@
 	"name": "dialog-language-support",
 	"displayName": "Dialog Language Support",
 	"description": "Language support for the Dialog language",
-	"version": "0.0.1",
+	"version": "1.0.0",
+	"publisher": "sideburns3000",
+	"license": "MIT",
+	"author": {
+		"name": "Michael Lauenstein",
+		"email": "sideburns3000@gmail.com"
+	},
 	"engines": {
 		"vscode": "^1.38.0"
 	},
 	"categories": [
 		"Programming Languages"
 	],
+	"keywords": ["Dialog", "Interactive Fiction", "Text Adventures", "IF"],
 	"icon": "./images/dialog_icon.png",
 	"activationEvents": [
 		"onCommand:extension.helloWorld",
