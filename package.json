@@ -4,6 +4,14 @@
 	"description": "Language support for the Dialog language",
 	"version": "1.0.0",
 	"publisher": "sideburns3000",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sideburns3000/vscode-dialog-language.git"
+	},
+	"bugs": {
+		"url": "https://github.com/sideburns3000/vscode-dialog-language/issues",
+		"email": "sideburns3000@gmail.com"
+	},
 	"license": "MIT",
 	"author": {
 		"name": "Michael Lauenstein",
