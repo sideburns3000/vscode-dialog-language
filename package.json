@@ -18,7 +18,10 @@
 	"keywords": ["Dialog", "Interactive Fiction", "Text Adventures", "IF"],
 	"icon": "./images/dialog_icon.png",
 	"activationEvents": [
-		"onCommand:extension.helloWorld",
+		"onCommand:dialog.compileToAastory",
+		"onCommand:dialog.compileToZ5",
+		"onCommand:dialog.compileToZ8",
+		"onCommand:dialog.compileToZblorb",
 		"onCommand:workbench.action.tasks.runTask"
 	],
 	"main": "./out/extension.js",
@@ -36,8 +39,20 @@
         }],
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "dialog.compileToAastory",
+				"title": "Compile to aastory"
+			},
+			{
+				"command": "dialog.compileToZ5",
+				"title": "Compile to z5"
+			},
+			{
+				"command": "dialog.compileToZ8",
+				"title": "Compile to z8"
+			},
+			{
+				"command": "dialog.compileToZblorb",
+				"title": "Compile to zblorb"
 			}
 		],
 		"taskDefinitions": [
@@ -78,6 +93,44 @@
 					"description": "List all .dg files that shall be included when compiling, separated only by commas (for example: stddebug.dg,stdlib.dg).\n(Except for the .dg file that is currently open in the editor, as that will be prepended automatically.)\nDefault is just the Standard Library: stdlib.dg."
 				}
 			}
+		},
+		"menus": {
+			"explorer/context": [{
+				"command": "dialog.compileToAastory",
+				"group": "8_compilation",
+				"when": "resourceLangId == dialog"
+			},
+			{
+				"command": "dialog.compileToZ5",
+				"group": "8_compilation",
+				"when": "resourceLangId == dialog"
+			},
+			{
+				"command": "dialog.compileToZ8",
+				"group": "8_compilation",
+				"when": "resourceLangId == dialog"
+			},
+			{
+				"command": "dialog.compileToZblorb",
+				"group": "8_compilation",
+				"when": "resourceLangId == dialog"
+			}],
+			"commandPalette": [{
+				"command": "dialog.compileToAastory",
+				"when": "false"
+			},
+			{
+				"command": "dialog.compileToZ5",
+				"when": "false"
+			},
+			{
+				"command": "dialog.compileToZ8",
+				"when": "false"
+			},
+			{
+				"command": "dialog.compileToZblorb",
+				"when": "false"
+			}]
 		}
 	},
 	"scripts": {
