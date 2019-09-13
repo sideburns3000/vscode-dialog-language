@@ -1,65 +1,66 @@
-# dialog-language-support README
+# Dialog Language Support
 
-This is the README for your extension "dialog-language-support". After writing up a brief description, we recommend including the following sections.
+This extension adds some support for the **Dialog** language, which is used to create interactive fiction (text adventures). Dialog was created by Linus Åkesson and can be found at <https://linusakesson.net/dialog/>.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+* syntax highlighting
 
-For example if there is an image subfolder under your extension project workspace:
+* bracket matching & autoclosing
 
-\!\[feature X\]\(images/feature-x.png\)
+* toggling comments (to comment swathes of code in/out) (`Ctrl+#`)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+* automatic indentation after certain keywords -- `(if, then, else, elseif)` -- and de-indentation after `(endif)`
 
-## Requirements
+* folding option: folds sections which begin when a line starts with `#` and which end when a line starts with `%%%`
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Compiling from VS Code
+
+In the file explorer panel, right-click on the `.dg` file you want to compile, and select `Compile to zblorb` (or `z8` etc.) from the context menu.
+
+**Or:** select `Terminal -> Run Task ...` from the menu bar and choose the compilation target.
+
+**Or:** press `Ctrl+Shift+B` (or from the menu: `Terminal -> Run Build Task...`) and choose which compilation target will be regarded as the default one.
+
+Compiler warnings and errors will be shown in the "Problems" tab, and you can click on them to jump to the corresponding line.
+
+**Note:** for compilation, the extension assumes that the compiler `dialogc` is accessible on your system via your PATH environment variable. If that is not the case (or if you want to try out a new experimental compiler version, for example), then you can provide the full path to the compiler executable in the extension settings.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `dialog.compiler`: Set the compiler executable that shall be used for compiling.
+* `dialog.includeWhenCompiling`: List all `.dg` files that shall be included when compiling, separated only by commas, in the intended order (for example: `stddebug.dg,stdlib.dg`). (Except for the `.dg` file that is currently open in the editor, as that will be prepended automatically.) The default is just the Standard Library: `stdlib.dg`.
 
-## Known Issues
+## Screenshots
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+**Syntax highlighting example (the colour theme is [Material Theme High Contrast](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)):**
+
+![Syntax highlighting](images/extract_from_stdlib_4052_cut.png)
+
+**Code folding (the colour theme is [Ayu Mirage Bordered](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)):**
+
+![Code folding](images/folding.gif)
+
+**Compilation from context menu (the colour theme is [Material Theme High Contrast](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)):**
+
+![Compilation](images/compile_from_context_menu.png)
+
+**Compiler warning, jump to the line from the "Problems" tab (the colour theme is [Material Theme High Contrast](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)):**
+
+![Compiler warning](images/compilation_problem.png)
+
+## NOT implemented
+
+The extension does not implement intelligent autocomplete, tooltips/hover information, interaction with the debugger and other advanced features.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 1.0.0 - 2019-09-13
 
-### 1.0.0
+Initial release.
 
-Initial release of ...
+## License
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Copyright (c) 2019 Michael Lauenstein. Released under the MIT License (see LICENSE).

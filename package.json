@@ -90,12 +90,12 @@
 				"dialog.compiler": {
 					"type": "string",
 					"default": "dialogc",
-					"description": "Set the compiler executable that shall be used for compiling.\nThe default is: dialogc. This assumes that dialogc is accessible on your system via your PATH environment variables.\nIf that is not the case, please provide the full path to the compiler executable."
+					"description": "Set the compiler executable that shall be used for compiling.\nThe default is: dialogc. This assumes that dialogc is accessible on your system via your PATH environment variable.\nIf that is not the case, please provide the full path to the compiler executable."
 				},
 				"dialog.includeWhenCompiling": {
 					"type": "string",
 					"default": "stdlib.dg",
-					"description": "List all .dg files that shall be included when compiling, separated only by commas (for example: stddebug.dg,stdlib.dg).\n(Except for the .dg file that is currently open in the editor, as that will be prepended automatically.)\nThe default is just the Standard Library: stdlib.dg."
+					"description": "List all .dg files that shall be included when compiling, separated only by commas, in the intended order (for example: stddebug.dg,stdlib.dg).\n(Except for the .dg file that is currently open in the editor, as that will be prepended automatically.)\nThe default is just the Standard Library: stdlib.dg."
 				}
 			}
 		},

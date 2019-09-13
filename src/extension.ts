@@ -59,7 +59,9 @@ class DialogTaskProvider implements vscode.TaskProvider {
 			compiler = vscode.workspace.getConfiguration("dialog").get<string>("compiler")!;
 		}
 		let basicArguments: string[] = ["-t", target, "${file}"];
-		let includeFilesList: string[] = includeFiles.split(",");
+		let includeFilesList: string[] = includeFiles.split(",").map(entry => {
+			return entry.trim();
+		});
 		let completeArguments: string[] = basicArguments.concat(includeFilesList);
 		return new vscode.Task(definition, vscode.TaskScope.Workspace, taskName, "dialog", new vscode.ProcessExecution(compiler, completeArguments), "$dialog");
 	}
