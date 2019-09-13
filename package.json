@@ -24,7 +24,7 @@
 		"Programming Languages"
 	],
 	"keywords": ["Dialog", "Interactive Fiction", "Text Adventures", "IF"],
-	"icon": "./images/dialog_icon.png",
+	"icon": "images/dialog_icon.png",
 	"activationEvents": [
 		"onCommand:dialog.compileToAastory",
 		"onCommand:dialog.compileToZ5",
