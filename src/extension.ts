@@ -54,10 +54,14 @@ class DialogTaskProvider implements vscode.TaskProvider {
 		if (vscode.workspace.getConfiguration("dialog").get<string>("includeWhenCompiling")) {
 			includeFiles = vscode.workspace.getConfiguration("dialog").get<string>("includeWhenCompiling")!;
 		}
+		let compiler: string = "dialogc";
+		if (vscode.workspace.getConfiguration("dialog").get<string>("compiler")) {
+			compiler = vscode.workspace.getConfiguration("dialog").get<string>("compiler")!;
+		}
 		let basicArguments: string[] = ["-t", target, "${file}"];
 		let includeFilesList: string[] = includeFiles.split(",");
 		let completeArguments: string[] = basicArguments.concat(includeFilesList);
-		return new vscode.Task(definition, vscode.TaskScope.Workspace, taskName, "dialog", new vscode.ProcessExecution("dialogc", completeArguments), "$dialog");
+		return new vscode.Task(definition, vscode.TaskScope.Workspace, taskName, "dialog", new vscode.ProcessExecution(compiler, completeArguments), "$dialog");
 	}
 }
 
@@ -71,7 +75,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// look out for changes to the compilation configuration settings
 	vscode.workspace.onDidChangeConfiguration(e => {
-        if (e.affectsConfiguration('dialog.includeWhenCompiling')) {
+        if (e.affectsConfiguration('dialog.includeWhenCompiling') || e.affectsConfiguration('dialog.compiler')) {
 			// we need to re-register the tasks
 			// to take into account the changed compilation settings
 			if (dgTaskProvider) {
