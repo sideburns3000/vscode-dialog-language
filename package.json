@@ -2,7 +2,7 @@
 	"name": "dialog-language-support",
 	"displayName": "Dialog Language Support",
 	"description": "Language support for the Dialog language",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"publisher": "sideburns3000",
 	"repository": {
 		"type": "git",
@@ -23,7 +23,12 @@
 	"categories": [
 		"Programming Languages"
 	],
-	"keywords": ["Dialog", "Interactive Fiction", "Text Adventures", "IF"],
+	"keywords": [
+		"Dialog",
+		"Interactive Fiction",
+		"Text Adventures",
+		"IF"
+	],
 	"icon": "images/dialog_icon.png",
 	"activationEvents": [
 		"onCommand:dialog.compileToAastory",
@@ -34,17 +39,26 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"languages": [{
-            "id": "dialog",
-            "aliases": ["Dialog", "dialog"],
-            "extensions": [".dg"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "dialog",
-            "scopeName": "source.dg",
-            "path": "./syntaxes/dialog.tmLanguage.json"
-        }],
+		"languages": [
+			{
+				"id": "dialog",
+				"aliases": [
+					"Dialog",
+					"dialog"
+				],
+				"extensions": [
+					".dg"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "dialog",
+				"scopeName": "source.dg",
+				"path": "./syntaxes/dialog.tmLanguage.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "dialog.compileToAastory",
@@ -108,42 +122,46 @@
 			}
 		},
 		"menus": {
-			"explorer/context": [{
-				"command": "dialog.compileToAastory",
-				"group": "8_compilation",
-				"when": "resourceLangId == dialog"
-			},
-			{
-				"command": "dialog.compileToZ5",
-				"group": "8_compilation",
-				"when": "resourceLangId == dialog"
-			},
-			{
-				"command": "dialog.compileToZ8",
-				"group": "8_compilation",
-				"when": "resourceLangId == dialog"
-			},
-			{
-				"command": "dialog.compileToZblorb",
-				"group": "8_compilation",
-				"when": "resourceLangId == dialog"
-			}],
-			"commandPalette": [{
-				"command": "dialog.compileToAastory",
-				"when": "false"
-			},
-			{
-				"command": "dialog.compileToZ5",
-				"when": "false"
-			},
-			{
-				"command": "dialog.compileToZ8",
-				"when": "false"
-			},
-			{
-				"command": "dialog.compileToZblorb",
-				"when": "false"
-			}]
+			"explorer/context": [
+				{
+					"command": "dialog.compileToAastory",
+					"group": "8_compilation",
+					"when": "resourceLangId == dialog"
+				},
+				{
+					"command": "dialog.compileToZ5",
+					"group": "8_compilation",
+					"when": "resourceLangId == dialog"
+				},
+				{
+					"command": "dialog.compileToZ8",
+					"group": "8_compilation",
+					"when": "resourceLangId == dialog"
+				},
+				{
+					"command": "dialog.compileToZblorb",
+					"group": "8_compilation",
+					"when": "resourceLangId == dialog"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "dialog.compileToAastory",
+					"when": "false"
+				},
+				{
+					"command": "dialog.compileToZ5",
+					"when": "false"
+				},
+				{
+					"command": "dialog.compileToZ8",
+					"when": "false"
+				},
+				{
+					"command": "dialog.compileToZblorb",
+					"when": "false"
+				}
+			]
 		}
 	},
 	"scripts": {
