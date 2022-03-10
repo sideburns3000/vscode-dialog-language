@@ -12,11 +12,11 @@ This extension adds some support for the **Dialog** language, which is used to c
 
 * automatic indentation after certain keywords -- `(if, then, else, elseif)` -- and de-indentation after `(endif)`
 
-* folding option: folds sections which begin when a line starts with `#` and which end when a line starts with `%%%`
+* folding option: folds indented sections, and sections which begin when a line starts with `#` and which end when a line starts with `%%%`
 
 ### Compiling from VS Code
 
-In the file explorer panel, right-click on the `.dg` file you want to compile, and select `Compile to zblorb` (or `z8` etc.) from the context menu.
+In the file explorer panel, right-click on the `.dg` file you want to compile, and select `Compile to z8` (or `aastory`, `z5`, `zblorb`) from the context menu.
 
 **Or:** select `Terminal -> Run Task ...` from the menu bar and choose the compilation target.
 
@@ -35,21 +35,17 @@ This extension contributes the following settings:
 
 ## Screenshots
 
-**Syntax highlighting example (the colour theme is [Material Theme High Contrast](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)):**
-
-![Syntax highlighting](images/extract_from_stdlib_4052_cut.png)
-
-**Code folding (the colour theme is [Ayu Mirage Bordered](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)):**
-
-![Code folding](images/folding.gif)
-
-**Compilation from context menu (the colour theme is [Material Theme High Contrast](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)):**
+**Compilation from context menu (the colour theme is Dark+ (default dark)):**
 
 ![Compilation](images/compile_from_context_menu.png)
 
-**Compiler warning, jump to the line from the "Problems" tab (the colour theme is [Material Theme High Contrast](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)):**
+**Code folding (the colour theme is [Ayu Mirage](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)):**
 
-![Compiler warning](images/compilation_problem.png)
+![Code folding](images/folding.gif)
+
+**Compiler warning, jump to the line from the "Problems" tab (the colour theme is [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme)):**
+
+![Compiler warning](images/jump_to_problem_line.gif)
 
 ## NOT implemented
 
@@ -57,10 +53,19 @@ The extension does not implement intelligent autocomplete, tooltips/hover inform
 
 ## Release Notes
 
+### 1.1.0 - 2022-03-10
+
+#### Changed
+
+Big thanks go to Nathanaël Marion ([Natrium729](https://marketplace.visualstudio.com/publishers/natrium729)), who contributed these changes:
+
+* Improved syntax highlighting with better, more fine-grained and redefined scopes.
+* Improved language configuration by adding a word pattern, such that VS Code's word completion will now work better for Dialog files and take into account leading sigils such as `$` or `#`.
+
 ### 1.0.0 - 2019-09-13
 
 Initial release.
 
 ## License
 
-Copyright (c) 2019 Michael Lauenstein. Released under the MIT License (see LICENSE).
+Copyright (c) 2019-present Michael Lauenstein. Released under the MIT License (see LICENSE).
